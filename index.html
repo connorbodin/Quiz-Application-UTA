@@ -11,24 +11,61 @@
 </head>
 
 <body>
-  <div class="min-vh-100 d-flex align-items-center bg-dark">
-    <section class="w-100 row justify-content-center" id="quiz" style="visibility: visable">
-      <div class="col-12 col-md col-lg-7 bg-light rounded">
-        <h1 class="text-center m-3 p-3">Quiz Questions!</h1>
-        <h2 class="text-left p-2">Question 1</h2>
-        <h4 class="text-left px-2 py-2"> Question 1 text</h4>
-        <div class="btn-group-justified btn-group-lg btn-group-vertical p-2">
-          <button type="button" class="btn btn-primary m-2 rounded">Primary</button>
-          <button type="button" class="btn btn-primary m-2 rounded">Primary</button>
-          <button type="button" class="btn btn-primary m-2 rounded">Primary</button>
-          <button type="button" class="btn btn-primary m-2 rounded">Primary</button>
-        </div>
-        <div class="d-flex justify-content-center btn-group-vertical btn-block m-2">
-          <button type="button" class="w-100 btn btn-primary m-1 py-2 px-2 btn-block rounded">Submit!</button>
-          <button type="button" class="btn btn-primary m-1 py-2 px-2 btn-block rounded">Start!</button>
-        </div>
+  <!-- Start Button -->
+
+  <div class="start_btn"><button>Start Quiz!</button></div>
+
+  <!-- Info -->
+
+  <div class="info_cont">
+    <div class="info-title"><span>Rules of the quiz!</span></div>
+    <div class="infolis">
+      <div class="info">Rule 1</div>
+      <div class="info">Rule 2</div>
+      <div class="info">Rule 3</div>
+      <div class="info">Rule 4</div>
+    </div>
+    <div class="buttons">
+      <button class="quit">Exit Quiz</button>
+      <button class="restart">Continue</button>
+    </div>
+  </div>
+
+
+  <!-- Quiz box -->
+  <div class="quiz_box">
+    <header>
+      <div class="title">Quiz Application</div>
+      <div class="timer">
+        <div class="time_left_txt">Time Left: </div>
+        <div class="timersec">15</div>
       </div>
-      </section>
+      <div class="time_line"></div>
+    </header>
+
+    <section>
+      <div class="que_text">
+        <!-- insert options from JS -->
+      </div>
+      <div class="option_list"></div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="total_que">
+              <!-- insert options from JS question cont-number-->
+    </div>
+    <button class="next_botton">Next Question</button>
+  </footer>
+
+
+  <!-- Results -->
+
+  <div class="result_cont">
+    <div class="result_box">
+      div
+    </div>
+  </div>
 </body>
 
 </html>

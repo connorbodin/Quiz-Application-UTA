@@ -35,5 +35,25 @@ const myQuestions = [
       },
       correctAnswer: "c"
     }
+    {
+      question: "What is 10+10",
+      answers: {
+        a: "6",
+        b: "8",
+        c: "10",
+        d: "20"
+      },
+      correctAnswer: "d"
+    }
+    {
+      question: "What is 30+2",
+      answers: {
+        a: "6",
+        b: "8",
+        c: "32",
+        d: "15"
+      },
+      correctAnswer: "c"
+    }
   ];
 

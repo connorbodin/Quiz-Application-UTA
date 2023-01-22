@@ -86,8 +86,13 @@ choices.forEach(choice => {
         if(!acceptingAnswers) return;
         console.log(e.target);
         acceptingAnswers = false;
-        const selectedChoice =e.target;
+        const selectedChoice = e.target;
         const selectedAnswers = selectedChoice.dataset["number"];
+
+        console.log(selectedAnswers);
+
+
+        getNextQuestion();
     });
 });
 

@@ -99,3 +99,17 @@ h3 {
     box-shadow: none;
     transform: none; 
 }
+
+.timer-header {
+    display: inline;
+}
+
+#question {
+    float: left;
+}
+
+#timer {
+    float: right;
+    font-size: 3rem;
+    padding-right: 7rem;
+}

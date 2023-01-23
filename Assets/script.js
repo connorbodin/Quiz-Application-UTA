@@ -3,9 +3,11 @@ var choices = Array.from(document.getElementsByClassName('choice-text'));
 console.log(choices);
 let currentQuestion = {};
 let acceptingAnswers = true;
+let secondsLeft = 15; 
 let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
+let timeEl = document.getElementById("timer");
 
 
 let questions = [
@@ -63,6 +65,7 @@ function startGame() {
     availableQuestions = [ ... questions];
     console.log(availableQuestions);
     getNextQuestion();
+    setTime();
 }
 
 function getNextQuestion() {
@@ -95,5 +98,22 @@ choices.forEach(choice => {
         getNextQuestion();
     });
 });
+
+function setTime() {
+    // Sets interval in variable
+    var timerInterval = setInterval(function() {
+      secondsLeft--;
+      timeEl.innerHTML = '⏲' + secondsLeft
+  
+      if(secondsLeft === 0) {
+        // Stops execution of action at set interval
+        clearInterval(timerInterval);
+        // Calls function to create and append image
+      }
+  
+    }, 1000);
+  }
+
+
 
 startGame();

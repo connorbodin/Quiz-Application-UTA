@@ -3,11 +3,12 @@ var choices = Array.from(document.getElementsByClassName("choice-text"));
 console.log(choices);
 let currentQuestion = {};
 let acceptingAnswers = true;
-let secondsLeft = 30;
+let secondsLeft = 5;
 let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
 let timeEl = document.getElementById("timer");
+let choiceEl = document.getElementById("correct");
 
 let questions = [
   {
@@ -69,7 +70,7 @@ function getNextQuestion() {
   const questionIndex = Math.floor(Math.random() * availableQuestions.length);
   currentQuestion = availableQuestions[questionIndex];
   question.innerText = currentQuestion.question;
-// Assigns the options choices to the page
+  // Assigns the options choices to the page
   choices.forEach((choice) => {
     const number = choice.dataset["number"];
     choice.innerText = currentQuestion["choice" + number];
@@ -92,12 +93,23 @@ choices.forEach((choice) => {
     console.log(selectedAnswers == currentQuestion.answer);
     if (selectedAnswers == currentQuestion.answer) {
       secondsLeft += 5;
+      selectedChoice.parentElement.classList.add("correct-answer");
+
+      setTimeout(() => {
+        selectedChoice.parentElement.classList.remove("correct-answer");
+
+        getNextQuestion();
+      }, 1000);
     } else {
       secondsLeft -= 5;
+      selectedChoice.parentElement.classList.add("wrong-answer");
+
+      setTimeout(() => {
+        selectedChoice.parentElement.classList.remove("wrong-answer");
+
+        getNextQuestion();
+      }, 1000);
     }
-
-    getNextQuestion();
-
   });
 });
 
@@ -110,6 +122,7 @@ function setTime() {
     if (secondsLeft === 0) {
       // Stops execution of action at set interval
       clearInterval(timerInterval);
+      document.location.replace('./highscores.html')
       // Calls function to create and append image
     }
   }, 1000);
